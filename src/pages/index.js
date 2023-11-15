@@ -1,12 +1,21 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+// pages/index.js
 
-const inter = Inter({ subsets: ['latin'] })
+import Head from 'next/head';
+import Script from 'next/script';
+
 
 export default function Home() {
   return (
-   <>
-   <h1>aniket</h1>
-   </>
-  )
+    <>
+      <Head>
+      </Head>
+      <h1>aniket</h1>
+      <Script
+        id="suppress-hydration-warning"
+        strategy="beforeInteractive"
+      >
+        {`if (typeof window !== 'undefined') console.warn = () => {};`}
+      </Script>
+    </>
+  );
 }
